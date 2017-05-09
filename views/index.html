@@ -154,11 +154,19 @@
 		<p class='font-green title-text' id='title-text'>Title ASFSDF FASFAFAS FSADF</p>
 			<blockquote>COOL QUOTE</blockquote>
 			</div>
+			Selection Div List Details
+			<div id="selectionDivsArea">
+				<section id="divTabs">
+			<!-- 		<div class="divTab selectedTab">1</div>
+					<div class="divTab">2</div>
+					<div class="divTab">3</div> -->
+				</section>
+				<hr>
+			</div>
 			<!-- 	<canvas id='picturePreviewCanvas'>
 					
 				</canvas> -->
 			</div>
-			
 
 
 		</div>
@@ -198,27 +206,29 @@
 	<script src="../js/touchSlide.js"></script>
 	<script src="../js/canvas.js"></script>
 	<script src="../js/pictureCanvas.js"></script>
+	<script src="../js/selectionDivTabs.js"></script>
 <script>
 
 
 //utilssss
-var removeCurrentClasses = function(parent){
+var removeCurrentClasses = function(parent, clas){
     for (var i = 0; i < parent.children.length; i++){  
-      parent.children[i].className = "";
+      parent.children[i].classList.remove(clas);
     }
 }
 
 var container = document.getElementById('picturePreview'),
     blendMode = document.getElementById('backgroundBlendModes'),
     textBlendMode = document.getElementById('textBlendModes')
-    titleText = document.getElementById('title-text')
+    titleText = document.getElementById('title-text'),
+    divTabs = document.getElementById('divTabs')
 
 blendMode.addEventListener('click', function(e) {
   if (e.target != e.currentTarget){
     var value = e.target.textContent;
     console.log(value)
     container.style.backgroundBlendMode = value;
-    removeCurrentClasses(blendMode);
+    removeCurrentClasses(blendMode, 'is--active');
     e.target.classList.add('is--active');
   }
 });
@@ -227,11 +237,24 @@ textBlendMode.addEventListener('click', function(e) {
   if (e.target != e.currentTarget){
     var value = e.target.textContent;
     console.log(value)
+    selecttionDivTabs.test(value)
     titleText.style.mixBlendMode = value;
-    removeCurrentClasses(textBlendMode);
+    removeCurrentClasses(textBlendMode, 'is--active');
     e.target.classList.add('is--active');
   }
 });
+divTabs.addEventListener('mouseover', function(e) {
+	if (e.target != e.currentTarget){
+	  var value = e.target.textContent;
+	  console.log(value)
+	  selectionDivTabs.getSelectedTabDetains(value)
+	  // titleText.style.mixBlendMode = value;
+	  removeCurrentClasses(divTabs, 'selectedTab');
+	  e.target.classList.add('selectedTab');
+	}
+});
+
+
 
 
 

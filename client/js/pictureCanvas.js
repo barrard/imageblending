@@ -110,7 +110,10 @@ $('#picturePreview').on('mouseup', function(e){
 	console.log(e);
 	if(dragged){
 		dragged=false
-			var currentSelectionDiv = $('#selectionDiv'+selectionArray.length)
+		var count = selectionArray.length
+			var currentSelectionDiv = $('#selectionDiv'+count)
+			selectionDivTabs.createTab(count)
+
 		console.log(currentSelectionDiv.css('width'));
 		console.log('Mouse Up ');
 		$('#picturePreview').css('cursor', 'default')

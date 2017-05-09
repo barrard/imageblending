@@ -136,7 +136,7 @@ input[name='name']{
 .title-text{
 	mix-blend-mode: exclusion;
 
-	border-right: 5px solid green;
+	border-right: 5px solid;
 	text-align: center;
 	font-size: 60px;
 
@@ -163,6 +163,26 @@ input[name='name']{
 
 }
 
+#selectionDivsArea{
+	border-top:solid tomato 5px;
+	width: 100%;	
+}
+
+.divTab{
+	border-radius: 5px 0;
+	box-shadow:0px 0px 5px 5px rgba(0, 0, 0, 0.9) ;
+	border: 2px solid black;
+	padding: 5px;
+	display: inline-flex;
+	font-size: 5px;
+}
+
+.divTab.selectedTab{
+	background: white;
+	box-shadow:0px 0px 5px 5px rgba(100, 0, 0, 0.9) ;
+	font-size: 35px;
+	padding: 5px;
+}
   #backgroundBlendModes > li {
   	text-align: center;
       font-size: /*23px*/;
