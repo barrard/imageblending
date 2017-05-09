@@ -1,0 +1,213 @@
+.box{
+	height: 25px;
+	width:25px;
+	background-color: green;
+
+
+}
+.right{
+	float: right;
+}
+
+.left{
+	float: left;
+}
+
+
+input[name='name']{
+	border: red 1px solid;
+}
+
+.uploadPreview{
+	width:105px;
+	height:105px;
+	margin-right: 5px;
+	border: 1px solid tomato;
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+
+
+.uploadPreview::after {
+	content:'';
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+
+
+
+
+.uploadPreview:hover {
+	border-radius: 5px;
+	position:relative;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.9);
+	filter:drop-shadow(5px 5px 7px black);
+    transform: scale(1.15, 1.15);
+}
+
+.decreaseBtn{
+	display:block;
+	width:25px;
+	height:25px;
+	background-color: #d62727;
+}
+
+.increaseBtn{
+	display:block;
+	width:25px;
+	height:25px;
+	background-color: #19a51b;
+
+}
+
+.selectionDiv{
+	position:absolute;
+	border: solid 2px goldenrod;
+	z-index: 111;
+	pointer-events:none;
+}
+
+#drawCanvas{
+	border: 1px solid tomato;
+}
+
+
+
+.blendModeMultiply{
+	mix-blend-mode: multiply;
+}
+.blendModeOverlay{
+	background-blend-mode: overlay;
+}
+.blendModeScreen{
+	background-blend-mode: screen;
+}
+.blendModeDarken{
+	background-blend-mode: darken;
+}
+.blendModeLighten{
+	background-blend-mode: lighten;
+}
+.blendModeColordodge{
+	background-blend-mode: color-dodge;
+}
+.blendModeColorburn{
+	background-blend-mode: color-burn;
+}
+.blendModeHArdlight{
+	background-blend-mode: hard-light;
+}
+.blendModeSoftlight{
+	background-blend-mode: soft-light;
+}
+.blendModeDifference{
+	background-blend-mode: difference;
+}
+.blendModeExclusion{
+	background-blend-mode: exclusion;
+}
+.blendModeHue{
+	background-blend-mode: hue;
+}
+.blendModeSaturation{
+	background-blend-mode: saturation;
+}
+.blendModeColor{
+	background-blend-mode: color;
+}
+.blendModeLuminosity{
+	background-blend-mode: luminosity;
+}
+.font-green{
+	color:green;
+}
+.title-text{
+	mix-blend-mode: exclusion;
+
+	border-right: 5px solid green;
+	text-align: center;
+	font-size: 60px;
+
+}
+
+.block{
+	display: block;
+	border: 3px solid black;
+}
+.menu__item {
+  overflow: scroll;
+  height: 165px;
+  display: block;
+  clear: both;
+}
+
+#backgroundBlendModes{
+	margin-left: -2em;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  list-style: none;
+  
+
+}
+
+  #backgroundBlendModes > li {
+  	text-align: center;
+      font-size: /*23px*/;
+    padding: 5px 6px;
+    display: block;
+    
+ 
+  }
+  .is--active{
+  	background-color:green;
+  	color:orange; 
+  	border: 2px dashed red;
+  }
+
+
+   li:hover {
+      cursor: pointer;
+      background-color: white;
+    }
+    li:focus {
+          cursor: pointer;
+          background-color: white;
+        }
+
+#picturePreview{
+	text-align: center;
+
+	height: 500px;
+	background-size: 100%;
+	background-image: url('../myPIC.jpg'); /*, url('../myPIC2.jpg')*/
+	background-color: 'none';
+	background-blend-mode: multiply, multiply;
+}
+#selectionDiv0{
+	background: green;
+		mix-blend-mode: hue;
+
+}
+#selectionDiv1{
+	background: red;
+		mix-blend-mode: hard-light;
+
+}
+#selectionDiv2{
+	background: yellow;
+		mix-blend-mode: screen;
+
+}

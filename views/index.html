@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="/styles/myGridCore.css">
+	<link rel="stylesheet" href="/styles/myGridUtil.css">
+	<link rel="stylesheet" href="/styles/app.css">
+	<title>INDEX</title>
+</head>
+<body>
+
+<div class="row wrap start">
+	
+
+
+
+		<div class="col md-medium md-no-grow  lg-small">
+			<div class="row">
+				
+					
+					<label for="">blur</label> <span id='blurVal'></span>
+					<div class="blur box "></div>
+					<div class="decreaseBtn"></div>
+					<input id='blurRange' type="range" min='0' max='30' step='1'>		
+					<div class="increaseBtn"></div>
+
+			
+			</div>
+			<div class="row">
+				Gray Scale <span id='grayVal'></span>
+				<div class="grayScale box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='grayRange' type="range" min='0' max='100' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				Sepia <span id='sepiaVal'></span>
+				<div class="sepia box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='sepiaRange' type="range" min='0' max='100' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				saturate <span id='saturateVal'></span>
+				<div class="saturate box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='saturateRange' type="range" min='0' max='500' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				Hue-Rotate <span id='hueVal'></span>
+				<div class="hue box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='hueRange' type="range" min='0' max='360' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				Invert <span id='invertVal'></span>
+				<div class="invert box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='invertRange' type="range" min='0' max='100' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				Opacity  <span id='opacityVal'></span>
+				<div class="opacity box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='opacityRange' type="range" min='0' max='100' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				Brightness  <span id='brightnessVal'></span>
+				<div class="brightness box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='brightnessRange' type="range" min='0' max='500' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				contrast  <span id='contrastVal'></span>
+				<div class="contrast box"></div>
+				<div class="decreaseBtn"></div>
+				<input id='contrastRange' type="range" min='0' max='700' step='1'>
+				<div class="increaseBtn"></div>
+			</div>
+			<div class="row">
+				Image Background Color
+				<input id='mainImageBackgroundColor' type="color">
+			</div>
+			<div class="reset">
+				<div class="green left">
+						<div class="row">
+					<span class='block'>Background Blend Mode</span>
+							  <div class="menu__item">
+							 <ul id="backgroundBlendModes">
+							  <li>normal</li>
+							  <li>multiply</li>
+							  <li>overlay</li>
+							  <li class="is--active">screen</li>
+							  <li>darken</li>
+							  <li>lighten</li>
+							  <li>color-dodge</li>
+							  <li>color-burn</li>
+							  <li>hard-light</li>
+							  <li>soft-light</li>
+							  <li>difference</li>
+							  <li>exclusion</li>
+							  <li>hue</li>
+							  <li>saturation</li>
+							  <li>color</li>
+							  <li>luminosity</li>
+							</ul>
+							  </div>
+						</div>
+				</div>
+				<div class="row">
+					Font Color
+					<input id='mainFontColor' type="color">
+				</div>
+				<div class="red right">
+					<div class="row">
+				<span class="block">Text Blend Mode</span>
+						  <div class="menu__item">
+						 <ul id="textBlendModes">
+						  <li>normal</li>
+						  <li>multiply</li>
+						  <li>overlay</li>
+						  <li class="is--active">screen</li>
+						  <li>darken</li>
+						  <li>lighten</li>
+						  <li>color-dodge</li>
+						  <li>color-burn</li>
+						  <li>hard-light</li>
+						  <li>soft-light</li>
+						  <li>difference</li>
+						  <li>exclusion</li>
+						  <li>hue</li>
+						  <li>saturation</li>
+						  <li>color</li>
+						  <li>luminosity</li>
+						</ul>
+						  </div>
+					</div>
+
+				</div>
+			</div>
+			
+			
+
+		</div>
+
+			<div class="col md-medium lg-large">
+			<div id='picturePreview' class='row blendModeMultiply'>
+		<p class='font-green title-text' id='title-text'>Title ASFSDF FASFAFAS FSADF</p>
+			<blockquote>COOL QUOTE</blockquote>
+			</div>
+			<!-- 	<canvas id='picturePreviewCanvas'>
+					
+				</canvas> -->
+			</div>
+			
+
+
+		</div>
+
+
+		<br>
+	<div class="row">
+		<canvas id="drawCanvas">
+			sorry your browser doesnt support Canvas
+		</canvas>
+	</div>
+
+		<br>
+
+		<form class='right'name='filePost' method='post' enctype="multipart/form-data">
+			file <input name = 'file'  type="file" multiple>
+			submit <input type="submit" name='uploadFile' value ='submit'>
+		</form>
+
+
+	<form action=""method='' enctype='multipart/form-data'>
+		what do you like to upload <input type="file" id='previewImgInput' multiple onchange="handleFiles(this.files)">
+	</form>
+	<img src="myPIC.jpg" hright="100" width='100' alt="" class="uploadPreview">
+
+
+
+
+
+
+
+
+
+</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/touchSlide.js"></script>
+	<script src="../js/canvas.js"></script>
+	<script src="../js/pictureCanvas.js"></script>
+<script>
+
+
+//utilssss
+var removeCurrentClasses = function(parent){
+    for (var i = 0; i < parent.children.length; i++){  
+      parent.children[i].className = "";
+    }
+}
+
+var container = document.getElementById('picturePreview'),
+    blendMode = document.getElementById('backgroundBlendModes'),
+    textBlendMode = document.getElementById('textBlendModes')
+    titleText = document.getElementById('title-text')
+
+blendMode.addEventListener('click', function(e) {
+  if (e.target != e.currentTarget){
+    var value = e.target.textContent;
+    console.log(value)
+    container.style.backgroundBlendMode = value;
+    removeCurrentClasses(blendMode);
+    e.target.classList.add('is--active');
+  }
+});
+
+textBlendMode.addEventListener('click', function(e) {
+  if (e.target != e.currentTarget){
+    var value = e.target.textContent;
+    console.log(value)
+    titleText.style.mixBlendMode = value;
+    removeCurrentClasses(textBlendMode);
+    e.target.classList.add('is--active');
+  }
+});
+
+
+
+
+
+
+// $('#picturePreview').on('dragend', function(e){
+// 	mousedown = false
+
+
+// $('#picturePreview').on('drop', function(e){
+// 	mousedown = false
+// 	$('#picturePreview').off('mousemove')
+// 	console.log(e);
+// 	console.log('DROP');
+// })
+
+
+$('.decreaseBtn').on('click', function(e){
+	var target = e.target
+	console.log(e);
+	console.log(target);
+	console.log(target.parentNode);
+	console.log(target.parentNode.children);
+	var children = target.parentNode.children
+	console.log(children.length);
+	for(var x = 0; x<children.length;x++){
+		if(children[x].localName==='input'){
+			console.log(children[x].id);
+		}
+	}
+})
+
+
+
+
+var filesArrayBlobs = []
+function handleFiles(files){
+	console.log(files);
+	for(var x = 0;x<files.length;x++){
+		filesArrayBlobs.push(window.URL.createObjectURL(files[x]))
+		$('body').append('<img class="uploadPreview" src="'+filesArrayBlobs[x]+'" height="100">')
+	}
+}
+var contrast,
+	brightness,
+	opacity,
+	invert,
+	hue,
+	saturate,
+	sepia,
+	grayScale,
+	blurr
+
+	var filterPropertiesObj=
+	{
+	contrast: function(){
+		var propValue = $('#contrastRange').val()},
+	brightness:function(){
+		return $('#brightnessRange').val()},
+	opacity:function(){
+		return $('#opacityRange').val()},
+	invert:function(){
+		return $('#invertRange').val()},
+	hue:function(){
+		return $('#hueRange').val()},
+	saturate:function(){
+		return $('#saturateRange').val()},
+	sepia:function(){
+		return $('#sepiaRange').val()},
+	grayScale:function(){
+		return $('#grayRange').val()},
+	blurr:function(){
+		return $('#blurRange').val()}
+	}
+	//drop-shadow
+
+var filterProperties=[]
+	// [contrast,
+	// brightness,
+	// opacity,
+	// invert,
+	// hue,
+	// saturate,
+	// sepia,
+	// sepia,
+	// blurr]
+
+
+$('#contrastRange').val(100)
+$('#contrastRange').on('change input', function(){
+	 contrast = $('#contrastRange').val()
+	$('.contrast').css('filter', 'contrast('+contrast+'%)')
+	$('#contrastVal').html(contrast)
+	contrast='contrast('+contrast+'%)'
+	filterProperties[0]=contrast
+
+})
+
+
+$('#brightnessRange').val(100)
+$('#brightnessRange').on('change input', function(){
+	var brightness = $('#brightnessRange').val()
+	$('.brightness').css('filter', 'brightness('+brightness+'%)')
+	$('#brightnessVal').html(brightness)
+	brightness='brightness('+brightness+'%)'
+	filterProperties[1]=brightness
+
+})
+
+$('#opacityRange').val(100)
+$('#opacityRange').on('change input', function(){
+	var opacity = $('#opacityRange').val()
+	$('.opacity').css('filter', 'opacity('+opacity+'%)')
+	$('#opacityVal').html(opacity)
+	opacity='opacity('+opacity+'%)'
+	filterProperties[2]=opacity
+
+})
+
+
+$('#invertRange').val(0)
+$('#invertRange').on('change input', function(){
+	var invert = $('#invertRange').val()
+	$('.invert').css('filter', 'invert('+invert+'%)')
+	$('#invertVal').html(invert)
+	invert='invert('+invert+'%)'
+	filterProperties[3]=invert
+
+})
+
+$('#hueRange').val(0)
+$('#hueRange').on('change input', function(){
+	var hue = $('#hueRange').val()
+	$('.hue').css('filter', 'hue-rotate('+hue+'deg)')
+	$('#hueVal').html(hue)
+	hue='hue-rotate('+hue+'deg)'
+	filterProperties[4]=hue
+
+})
+
+$('#saturateRange').val(0)
+$('#saturateRange').on('change input', function(){
+	var saturate = $('#saturateRange').val()
+	$('.saturate').css('filter', 'saturate('+saturate+'%)')
+	$('#saturateVal').html(saturate)
+	saturate='saturate('+saturate+'%)'
+	filterProperties[5]=saturate
+
+})
+
+$('#sepiaRange').val(0)
+$('#sepiaRange').on('change input', function(){
+	var sepia = $('#sepiaRange').val()
+	$('.sepia').css('filter', 'sepia('+sepia+'%)')
+	$('#sepiaVal').html(sepia)
+	sepia='sepia('+sepia+'%)'
+	filterProperties[6]=sepia
+
+})
+
+$('#grayRange').val(0)
+$('#grayRange').on('change input', function(){
+	var grayScale = $('#grayRange').val()
+	$('.grayScale').css('filter', 'grayscale('+grayScale+'%)')
+	$('#grayVal').html(grayScale)
+	grayScale='grayscale('+grayScale+'%)'
+	filterProperties[7]=grayScale
+
+})
+
+
+$('#blurRange').val(0)
+$('#blurRange').on('change input', function(){
+	var blurr = $('#blurRange').val()
+	$('.blur').css('filter', 'blur('+blurr+'px)')
+	$('#blurVal').html(blurr)
+	blurr='blur('+blurr+'px)'
+	filterProperties[8]=blurr
+
+	// $('.LED').animate({
+	// 	filter:'blur('+200+'px)',
+	// 	height:100
+	// }, 500, function(){
+	// 	console.log('Animatiuon!');
+	// })
+
+})
+
+$('#mainImageBackgroundColor').on('input', function(){
+	console.log(this.value)
+	$('#picturePreview').css('backgroundColor', this.value)
+})
+
+$('#mainFontColor').on('input', function(){
+	console.log(this.value)
+	$('#title-text').css('color', this.value)
+})
+
+
+
+
+$('input[type="range"]').on('change input', function(){
+	var tags ='';
+	for(var x = 0; x<filterProperties.length;x++){
+	if(typeof filterProperties[x]!=='undefined'){
+	  tags += filterProperties[x]
+	  }  
+	}
+	$('#picturePreview').css('filter', tags)
+	console.log(tags);
+})
+
+
+
+
+
+
+
+	$('form[name = filePost]').submit(function(e){
+		// e.preventDefault()
+		console.log('Form submit files are....');
+$.post('/index', function(data){
+	console.log(data);
+})
+
+
+		var formData = new FormData($(this)[0])
+		console.log(formData);
+
+		
+
+
+
+	})
+</script>
+</body>
+</html>
