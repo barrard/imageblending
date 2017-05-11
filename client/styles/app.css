@@ -73,6 +73,7 @@ input[name='name']{
 }
 
 .selectionDiv{
+	border-radius: 0px;
 	position:absolute;
 	border: solid 2px goldenrod;
 	z-index: 111;
@@ -141,10 +142,31 @@ input[name='name']{
 	font-size: 60px;
 
 }
+.reset{
+/*	display: block;
+	position: relative;*/
+}
 
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.flex{
+	flex: 0;
+}
 .block{
 	display: block;
 	border: 3px solid black;
+}
+.top{
+	top: 0;
+}
+
+.padded >th{
+	padding: 1em 1em 0em 0em;
+	border:1px solid green;
 }
 .menu__item {
   overflow: scroll;
@@ -153,11 +175,25 @@ input[name='name']{
   clear: both;
 }
 
+td > input{	
+	width: 100%;
+}
+
+
 #backgroundBlendModes{
-	margin-left: -2em;
-  margin: 0;
+	/*margin-left: -2em;*/
+  /*margin: 0;*/
   margin-bottom: 15px;
-  padding: 0;
+  padding: 9px;
+  list-style: none;
+  
+
+}
+#textBlendModes{
+/*	margin-left: -2em;
+*/  /*margin: 0;*/
+  margin-bottom: 15px;
+  padding: 9px;
   list-style: none;
   
 
@@ -183,14 +219,18 @@ input[name='name']{
 	font-size: 35px;
 	padding: 5px;
 }
-  #backgroundBlendModes > li {
+/*  #backgroundBlendModes{
   	text-align: center;
-      font-size: /*23px*/;
     padding: 5px 6px;
     display: block;
     
  
   }
+  #textBlendModes{
+  		text-align: center;
+  	  padding: 5px 6px;
+  	  display: block;
+  }*/
   .is--active{
   	background-color:green;
   	color:orange; 
@@ -230,4 +270,14 @@ input[name='name']{
 	background: yellow;
 		mix-blend-mode: screen;
 
+}
+
+.text-white{
+	color:white;
+}
+.text-red{
+	color:red;
+}
+.stantout{
+	padding-bottom:5px;
 }

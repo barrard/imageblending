@@ -88,9 +88,9 @@
 				<input id='mainImageBackgroundColor' type="color">
 			</div>
 			<div class="reset">
-				<div class="green left">
+				<div class="green left relative">
 						<div class="row">
-					<span class='block'>Background Blend Mode</span>
+					<span class="absolute top text-white standout">Background Blend Mode</span>
 							  <div class="menu__item">
 							 <ul id="backgroundBlendModes">
 							  <li>normal</li>
@@ -113,13 +113,9 @@
 							  </div>
 						</div>
 				</div>
-				<div class="row">
-					Font Color
-					<input id='mainFontColor' type="color">
-				</div>
-				<div class="red right">
+				<div class="red right relative">
 					<div class="row">
-				<span class="block">Text Blend Mode</span>
+				<span class="absolute top text-white standout">Text Blend Mode</span>
 						  <div class="menu__item">
 						 <ul id="textBlendModes">
 						  <li>normal</li>
@@ -143,6 +139,13 @@
 					</div>
 
 				</div>
+
+
+				<div class="row">
+					Font Color
+					<input id='mainFontColor' type="color">
+				</div>
+
 			</div>
 			
 			
@@ -162,6 +165,54 @@
 					<div class="divTab">3</div> -->
 				</section>
 				<hr>
+				<div class="tabDetails">
+				<table id='selectionTable' data-link=''>
+						<tr class='padded'>
+						<th>Top</th>
+						<th>Left</th>
+						<th>Height</th>
+						<th>Width</th>
+						<th>color</th>
+						<th>Blend Mode</th>
+						<th>Border Radius</th>
+						<th>Border Thickness</th>
+						<th>Border Color</th>
+						<th>Border Style</th>
+						</tr>
+						<tr id='inputRow'>
+							<td><input data-attr='top' type="number" id="selectionDivTop" class="">top</td>
+							<td><input data-attr='left' type="number" id="selectionDivLeft" class="">Left</td>
+							<td><input data-attr='height' type="number" id="selectionDivHeight" class="">Height</td>
+							<td><input data-attr='width' type="number" id="selectionDivWidth" class="">Width</td>
+							<td><input data-attr='background' type="color" id="selectionDivColor" class="">Color</td>
+							<td>
+								<select data-attr='mixBlendMode' name="blendMode" id="selectionDivBlendMode">
+									<option value='normal'>normal</option>
+									<option value='multiply'>multiply</option>
+									<option value='screen'>screen</option>
+									<option value='overlay'>overlay</option>
+									<option value='darken'>darken</option>
+									<option value='lighten'>lighten</option>
+									<option value='color-dodge'>color-dodge</option>
+									<option value='color-burn'>color-burn</option>
+									<option value='hard-light'>hard-light</option>
+									<option value='soft-light'>soft-light</option>
+									<option value='difference'>difference</option>
+									<option value='exclusion'>exclusion</option>
+									<option value='hue'>hue</option>
+									<option value='saturation'>saturation</option>
+									<option value='color'>color</option>
+									<option value='luminosity'>luminosity</option>
+								</select>
+							</td>
+							<td><input data-attr='borderRadius' type="number"  id="selectionDivBR" class="">Border Radius</td>
+							<td><input data-attr='borderThickness' type="number" id="selectionDivBT" class="">Border Thickness</td>
+							<td><input data-attr='borderColor' type="color" id="selectionDivBC" class="">Border Color</td>
+							<td><input data-attr='borderStyle' type="text" id="selectionDivBS" class="">Border Style</td>
+						</tr>
+				</table>
+					top, left, height, width, blend mode, color, border color style radius
+				</div>
 			</div>
 			<!-- 	<canvas id='picturePreviewCanvas'>
 					
@@ -237,7 +288,7 @@ textBlendMode.addEventListener('click', function(e) {
   if (e.target != e.currentTarget){
     var value = e.target.textContent;
     console.log(value)
-    selecttionDivTabs.test(value)
+    selectionDivTabs.test(value)
     titleText.style.mixBlendMode = value;
     removeCurrentClasses(textBlendMode, 'is--active');
     e.target.classList.add('is--active');
@@ -247,7 +298,8 @@ divTabs.addEventListener('mouseover', function(e) {
 	if (e.target != e.currentTarget){
 	  var value = e.target.textContent;
 	  console.log(value)
-	  selectionDivTabs.getSelectedTabDetains(value)
+	  document.getElementById('selectionTable').setAttribute('data-link', value)
+	  selectionDivTabs.getSelectedTabDetails(value)
 	  // titleText.style.mixBlendMode = value;
 	  removeCurrentClasses(divTabs, 'selectedTab');
 	  e.target.classList.add('selectedTab');

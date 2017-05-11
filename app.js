@@ -181,7 +181,7 @@ app.get('/index', function(req, res){
 	}
 	res.append('this','append')
 	res.set('Content-Type', 'text/html');
-	res.sendFile(__dirname+'/views/index.html', options)
+	res.sendFile(__dirname+'/client/index.html', options)
 	console.log(req.url);
 	
 })
